@@ -1,13 +1,15 @@
 #include "config.h"
 #include "app.h"
 
-void CheckWifiConnection () {
-    WiFi.begin (wifi_ssid, wifi_pass);
+#include <WiFi.h>
+
+void CheckWifiConnection() {
+    WiFi.begin(wifi_ssid, wifi_pass);
 
     while (WiFi.status() != WL_CONNECTED)
     {
         delay(500);
-        Seriala.print(".");
+        Serial.print(".");
     }
     Serial.println("");
     Serial.println("WiFi connected!");

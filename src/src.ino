@@ -2,7 +2,7 @@
 #include "app.h"
 
 // Define constans for button pins
-const int buttonPins[] ={up_button, down_button, yes_button, no_button};
+const int buttonPins[] = {up_button, down_button, yes_button, no_button};
 const int numButtons = sizeof(buttonPins) / sizeof(buttonPins[0]);
 
 // Define states
@@ -29,8 +29,8 @@ void setup(){
 
     // Initialaize buttons pins and attach interrupts
     for (int i = 0; i < numButtons; i++){
-        pinMode(buttonPins[i], INPUT_PULLUP);
-        attachInterrupt(digitalPinToInterrupt(buttonPins[i]), buttonISR, FALLING);
+      pinMode(buttonPins[i], INPUT_PULLUP);
+      attachInterrupt(digitalPinToInterrupt(buttonPins[i]), buttonISR, FALLING);
     }
 }
 
@@ -39,8 +39,8 @@ void loop(){
     // Check if any button was pressed
     for (int i = 0; i < numButtons; i++){
         if (buttonPressed[i]){
-            buttonPressed[i] = false;
-            buttonActions[i]();
+          buttonPressed[i] = false;
+          buttonActions[i]();
         }
     }
 
