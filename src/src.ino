@@ -10,7 +10,7 @@ volatile uint8_t buttonStates = 0;
 volatile bool buttonPressed[numButtons] = {false};
 
 // Function pointers  for action
-void (*buttonActions[numButtons])() = {up_select, down_select, yes_select, no_select};
+void (*buttonActions[numButtons])() = {up_select(), down_select(), yes_select(), no_select()};
 
 // Interrupt service routine for button presses
 void IRAM_ATTR buttonISR(){
@@ -19,11 +19,15 @@ void IRAM_ATTR buttonISR(){
             buttonPressed[i] = true;
         }
     }
-}
+} 
 
 void setup(){
     Serial.begin(115200);
-    
+    pinMode(up_button, INPUT_PULLUP);
+    pinMode(down_button, INPUT_PULLUP);
+    pinMode(yes_button, INPUT_PULLUP);
+    pinMode(no_button, INPUT_PULLUP);
+
     // Initialize the WiFi connection
     CheckWifiConnection();
 

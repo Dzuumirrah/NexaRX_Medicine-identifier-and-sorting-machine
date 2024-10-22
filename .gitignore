@@ -1,0 +1,5 @@
+# settings folder
+.vscode/
+
+# additional folder
+reference/

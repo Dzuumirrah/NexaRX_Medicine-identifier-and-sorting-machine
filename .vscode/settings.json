@@ -1,6 +1,15 @@
 {
     "files.associations": {
         "config.h": "c",
-        "app.h": "c"
-    }
+        "app.h": "c",
+        "epd_bitmap_data.cpp": "c",
+        "u8glib.h": "c",
+        "chrono": "cpp",
+        "ostream": "cpp",
+        "epd_bitmap_data.h": "c",
+        "wifi.h": "c"
+    },
+    "C_Cpp.default.compilerPath": "cl.exe",
+    "C_Cpp.errorSquiggles": "disabled",
+    "cmake.ignoreCMakeListsMissing": true
 }
